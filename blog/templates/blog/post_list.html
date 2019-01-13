@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My Blog</title>
-</head>
-<body>
-	<p>This is my page!</p>
-	<p>Yay!! やった</p>
-</body>
-</html>
+{% extends './base.html' %}
+
+{% block content %}
+	<p>This <B>is</B> my page!</p>
+	<p>Yay!! やった Hello Shubham</p>
+
+	
+	<div>
+		{% for post in posts %}
+			<h2>
+				<a href="#">{{post.title}}</a>
+			</h2>
+			<p>{{post.published_date}}</p>
+			<p>{{post.text| linebreaksbr}}</p>
+		{% endfor %}
+	</div> 
+{% endblock %}
